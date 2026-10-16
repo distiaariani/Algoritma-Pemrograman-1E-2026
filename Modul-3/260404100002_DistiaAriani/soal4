@@ -1,0 +1,36 @@
+jumlah_mahasiswa = 10
+kuota_penuh = 3
+ipk = 3.00
+batas_penuh = 3000000
+batas_sebagian = 5000000
+penghasilan = 0
+jumlah_penuh = 0
+
+for i in range (1, jumlah_mahasiswa + 1):
+    print ("Mahasiswa ke- :", i )
+    
+    nama = input("nama mahasiswa : ")
+    ipk = float(input("Masukkan ipk: "))
+    
+    if ipk < 3.00:
+        print("Hasil Tidak Memenuhi syarat")
+        continue
+
+    penghasilan = int(input("penghasilan orang tua per bulan : ")) 
+
+    if penghasilan <= batas_penuh :
+        print("hasil mendapatkan beasiswa penuh")
+        jumlah_penuh += 1
+    elif penghasilan <= batas_sebagian :
+        print("hasil mendapatkan beasiswa sebagian")
+    else:
+        print("hasil tidak mendapatkan beasiswa")
+
+    if jumlah_penuh == kuota_penuh:
+        print("kuota beasiswa penuh (3 mahasiswa) telah terpenuhi")
+        print ("proses seleksi dihentikan.")
+        break
+
+print("seleksai selesai")
+print("total penerima beasiswa penuh: ", jumlah_penuh)
+

@@ -1,0 +1,33 @@
+jumlah_penumpang = 0
+total_pendapatan = 0
+jarak_terjauh = 0
+total_jarak = 0
+
+while True:
+    jarak = int(input("Masukkan jarak tempuh (km) : "))
+    if jarak == 0:
+        break
+    if jarak <0:
+        print("jarak tidak valid")
+        continue
+    jumlah_penumpang += 1
+    total_jarak += jarak 
+
+    if jarak > jarak_terjauh:
+        jarak_terjauh = jarak
+    
+    if jarak <= 5 :
+        total_pendapatan += 3000
+    elif jarak <= 15:
+        total_pendapatan += 3000 + (jarak - 5) * 1000
+    else :
+        total_pendapatan += 13000 + (jarak - 15) * 500
+        if jumlah_penumpang % 5 == 0:
+            diskon = total_pendapatan * 0.5
+            total_pendapatan -= diskon
+
+print ("Jumlah penumpang: ", jumlah_penumpang) 
+print("Total jarak: ", total_jarak)
+print("Jarak terjauh: ", jarak_terjauh)
+print("Total pendapatan: ", total_pendapatan) 
+
